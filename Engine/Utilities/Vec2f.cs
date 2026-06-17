@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace InterstellarPixelEngine.Engine.Utilities
+namespace SkyGameEngine.Engine.Utilities
 {
     public struct Vec2f
     {
@@ -18,10 +18,10 @@ namespace InterstellarPixelEngine.Engine.Utilities
             Y = y;
         }
 
-        //Allow Vec2f to be automatically coverted to Monogame's Vector2
+        //Allow Vec2f to be automatically coverted to Monogame's Vector2 - own factionality but still use Monogame
         public static implicit operator Vector2(Vec2f v) => new Vector2(v.X, v.Y);
 
-        // convert monogame vector2 to vec2f
+        // convert monogame vector2 to vec2f - reversing the above. Convert back and forth.
         public static implicit operator Vec2f(Vector2 v) => new Vec2f(v.X, v.Y);
 
         //common directional constants (screen-space: Y+ is down)
@@ -67,11 +67,11 @@ namespace InterstellarPixelEngine.Engine.Utilities
         }
 
         //Vector addition
-        public static Vec2f operator +(Vec2f a, Vec2f b) =>
+        public static Vec2f operator + (Vec2f a, Vec2f b) =>
             new Vec2f(a.X + b.X, a.Y + b.Y);
 
         //Vector subtraction
-        public static Vec2f operator -(Vec2f a, Vec2f b) =>
+        public static Vec2f operator - (Vec2f a, Vec2f b) =>
             new Vec2f(a.X - b.X, a.Y - b.Y);
 
         //scalar multiplication
@@ -79,15 +79,15 @@ namespace InterstellarPixelEngine.Engine.Utilities
             new Vec2f(a.X * b, a.Y * b);
 
         //Scalar Division
-        public static Vec2f operator /(Vec2f a, float b) =>
+        public static Vec2f operator / (Vec2f a, float b) =>
             new Vec2f(a.X / b, a.Y / b);
 
         // equality check
-        public static bool operator ==(Vec2f a,Vec2f b)=>
+        public static bool operator == (Vec2f a,Vec2f b)=>
             a.X == b.X && a.Y == b.Y;
 
         //not equal check
-        public static bool operator !=(Vec2f a, Vec2f b) =>
+        public static bool operator != (Vec2f a, Vec2f b) =>
             !(a == b);
 
         // unary negation (flip direction)
@@ -109,6 +109,7 @@ namespace InterstellarPixelEngine.Engine.Utilities
         //converts to Monogame Vector2 explicity if needed
         public Vector2 ToXna() => new Vector2(X, Y);
 
+
         //has code based on X and Y values
         public override int GetHashCode()
         {
@@ -118,7 +119,7 @@ namespace InterstellarPixelEngine.Engine.Utilities
         //returns the length(magnitude) of the vector
         public float Length()=> MathF.Sqrt(X * X + Y * Y);
 
-        // returns a normalized (unit length) version of this vector
+        // returns a normalized (unit length) version of this vector - so you don't move faster diagonally.
         public Vec2f Normalized()
         {
             float len = Length();
