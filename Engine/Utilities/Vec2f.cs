@@ -42,8 +42,8 @@ namespace InterstellarPixelEngine.Engine.Utilities
         public Vec2f Perpendicular() => new Vec2f(-Y, X);
 
         // Returns the squared length of the vector
-        // faster than Lenght() and useful for comparisons
-        public float LenghtSquared() => X * X + Y * Y;
+        // faster than Length() and useful for comparisons
+        public float LengthSquared() => X * X + Y * Y;
 
         public bool NearZero(float epsilon = 0.001f)
         {
@@ -115,7 +115,7 @@ namespace InterstellarPixelEngine.Engine.Utilities
             return X.GetHashCode() ^ Y.GetHashCode();
         }
 
-        //returns the length(magnitude) of the vecotr
+        //returns the length(magnitude) of the vector
         public float Length()=> MathF.Sqrt(X * X + Y * Y);
 
         // returns a normalized (unit length) version of this vector
@@ -185,7 +185,7 @@ namespace InterstellarPixelEngine.Engine.Utilities
             return a + (b - a) * t;
         }
 
-        //Limits the legnth of the vector without its direction
+        //Limits the length of the vector without its direction
         public Vec2f ClampMagnitude(float maxLength)
         {
             float len = Length();
@@ -194,7 +194,7 @@ namespace InterstellarPixelEngine.Engine.Utilities
             return this;
         }
 
-        //clamps each compoent of the vector individually
+        //clamps each component of the vector individually
         public Vec2f Clamp(Vec2f min,  Vec2f max)
         {
             return new Vec2f(MathF.Max(min.X,MathF.Min(max.X,X)),MathF.Max(min.Y,MathF.Min(max.Y,Y)));
@@ -212,12 +212,5 @@ namespace InterstellarPixelEngine.Engine.Utilities
         }
 
         public override string ToString() => $"({X},{Y}";
-        
-           
-        
-
     }
 }
-
-
-
