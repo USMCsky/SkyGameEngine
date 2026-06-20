@@ -2,17 +2,6 @@
 
 A comprehensive game engine for creating 2D and 3D games with a focus on performance and ease of use.
 
-## Table of Contents
-
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support](#support)
-
 ## Features
 
 - **Cross-Platform**: Support for Windows, macOS, and Linux
