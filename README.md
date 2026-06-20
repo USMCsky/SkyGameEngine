@@ -12,14 +12,6 @@ A comprehensive game engine for creating 2D and 3D games with a focus on perform
 - **Scripting Support**: Multiple scripting language options
 - **Editor Tools**: Integrated development environment for game creation
 
-## Getting Started
-
-### Prerequisites
-
-- C++ 17 or later
-- CMake 3.20+
-- OpenGL 4.5+ compatible graphics hardware
-- [Additional platform-specific requirements]
 
 ### Installation
 
